@@ -135,6 +135,7 @@ class DockerAgent(BaseAgent):
                     "action_space":
                     json.dumps(action_space, cls=utility.PommermanJSONEncoder)
                 })
+            print(req.content)
             action = req.json()['action']
         except requests.exceptions.Timeout as e:
             print('Timeout!')
